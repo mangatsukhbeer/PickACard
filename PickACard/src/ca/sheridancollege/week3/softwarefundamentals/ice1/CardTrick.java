@@ -71,7 +71,7 @@ public class CardTrick {
         }
         //Then report the result here
         if(found == 1){ // if found ==1 means the value of the luckyCard is in the random 7 cards in the magicHand
-            System.out.println("Winner!!!!\nYour card " + userCard.getValue() + " of " + userCard.getSuit() +" is in the Magic Hand");
+            System.out.println("Winner!!!!\nYour card " + luckyCard.getValue() + " of " + luckyCard.getSuit() +" is in the Magic Hand");
         }
         else{ // else the card is not found in the magicHand
             System.out.println("Your card is NOT in the Magic Hand");
