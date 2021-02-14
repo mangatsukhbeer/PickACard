@@ -20,6 +20,9 @@ public class CardTrick {
     public static void main(String[] args)
     {
         Card[] magicHand = new Card[7];
+        Card luckyCard = new Card(); //Adding hardcoded luckyCard object
+        luckyCard.setValue(3); // setting the value of lucky card to 3
+        luckyCard.setSuit("Hearts"); // setting the suit to hearts
         
         for (int i=0; i<magicHand.length; i++)
         {
@@ -32,7 +35,7 @@ public class CardTrick {
         }
         
         //insert code to ask the user for Card value and suit, create their card
-        Scanner input = new Scanner(System.in); // Scanner object input to collect user input
+        /* Scanner input = new Scanner(System.in); // Scanner object input to collect user input
         System.out.print("Pick a Card\nPlease enter a random card number between 1-13 :"); // prompt for the user to enter a random number between 1-13
         int cardNumber = input.nextInt(); // user entry saved in integer cardNumber
         while(cardNumber < 1 || cardNumber > 13){ // user entry validation, if the number is not between 1-13, user will get a prompt to re-enter it
@@ -56,18 +59,18 @@ public class CardTrick {
         }
         Card userCard = new Card(); // new userCard object created to store user entry
         userCard.setSuit(userCard.SUITS[cardSuit]); // userCard Suit set to user's entered suit
-        userCard.setValue(cardNumber); // userCard value set to user's preferred card number
+        userCard.setValue(cardNumber); // userCard value set to user's preferred card number */
         // and search magicHand here
         int found = 0; // integer found to confirm the result of the search
         for(int i = 0; i < magicHand.length && found == 0;i++){
-            if(magicHand[i].getValue() == userCard.getValue()){ // if the userCard object holds the same Value as one of the magicCard array card value's
-                if(magicHand[i].getSuit().equals(userCard.getSuit())){ //if any of the objects in magicCard array has the same card value as user the Suit is checked
+            if(magicHand[i].getValue() == luckyCard.getValue()){ // if the luckyCard object holds the same Value as one of the magicCard array card value's
+                if(magicHand[i].getSuit().equals(luckyCard.getSuit())){ //if any of the objects in magicCard array has the same card value as luckyCard the Suit is checked
                     found = 1; // if the suit for both card matches integer found's value is changed
                 }
             }
         }
         //Then report the result here
-        if(found == 1){ // if found ==1 means the value of the userCard is in the random 7 cards in the magicHand
+        if(found == 1){ // if found ==1 means the value of the luckyCard is in the random 7 cards in the magicHand
             System.out.println("Winner!!!!\nYour card " + userCard.getValue() + " of " + userCard.getSuit() +" is in the Magic Hand");
         }
         else{ // else the card is not found in the magicHand
